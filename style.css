@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src: url(source/fonts/Vazir.ttf) format("truetype") ,
+    url(source/fonts/Vazir.woff) format("woff");
+}
+body{
+    background-color: #ECEFF1;
+    font-family: "vazir" , "tahoma";
+}
+
+.titleContainer{
+    text-align: center;
+    margin: 15px;
+}
+
+.topHead{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleHead{
+    text-align: center;
+    font-size: 1.2rem;
+}
+span{
+    color: #F4511E;
+}
+
+.container{
+    margin-top: 50px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.itemAdd{
+    display: flex;
+    justify-content: center;
+    height: 2.5rem;
+}
+
+.input{
+    width: 80%;
+    border: none;
+    padding-right: 15px;
+    padding-left: 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 20px 20px 0px;
+}
+
+.buttonAdd{
+    background-color: #F4511E;
+    color: #ffff;
+    margin-right: -20px;
+    border: none;
+    width: 20%;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.buttonAdd:hover{
+    background-color: #D84315;
+    cursor: pointer;
+}
+.buttonAdd:active{
+    background-color: #FF5722;
+}
