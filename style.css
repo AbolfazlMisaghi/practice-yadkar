@@ -1,78 +1,147 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family: "Vazir";
-    src: url(source/fonts/Vazir.ttf) format("truetype") ,
+  font-family: "Vazir";
+  src: url(source/fonts/Vazir.ttf) format("truetype"),
     url(source/fonts/Vazir.woff) format("woff");
 }
-body{
+body {
+  background-color: #eceff1;
+  font-family: "vazir", "tahoma";
+}
+
+.titleContainer {
+  text-align: center;
+  margin: 15px;
+}
+
+.topHead {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleHead {
+  text-align: center;
+  font-size: 1.2rem;
+}
+p span {
+  color: #f4511e;
+}
+svg {
+  width: 22px;
+  height: 22px;
+}
+
+.container {
+  margin-top: 50px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.itemAdd {
+  display: flex;
+  justify-content: center;
+  height: 2.5rem;
+}
+
+.input {
+  width: 80%;
+  border: none;
+  padding-right: 15px;
+  padding-left: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 20px 20px 0px;
+}
+
+.buttonAdd {
+  background-color: #f4511e;
+  color: #ffff;
+  margin-right: -20px;
+  border: none;
+  width: 20%;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.buttonAdd:hover {
+  cursor: pointer;
+}
+.buttonAdd:active {
+  background-color: #ff5722;
+}
+
+.tasks {
+    padding: 25px;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #ffff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li{
+  margin-bottom: 8px;
+}
+
+.delete {
+  color: #f4511e;
+}
+
+li {
     background-color: #ECEFF1;
-    font-family: "vazir" , "tahoma";
+ padding: 5px 2px;
+ display: flex;
+ justify-content: space-between;
+border-radius: 20px;
 }
 
-.titleContainer{
-    text-align: center;
-    margin: 15px;
-}
-
-.topHead{
-    padding: 5px;
+.boxTask{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5rem;
 }
 
-.titleHead{
-    text-align: center;
-    font-size: 1.2rem;
+button {
+  border: none;
 }
-span{
-    color: #F4511E;
+/* checkbox */
+input[type="checkbox"] {
+  appearance:none;
+  width:22px;
+  height:22px;
+  border:2px solid #ccc;
+  border-radius:50%;
+  cursor:pointer;
+  position:relative;
+  background:#fff;
+  transition:border-color .3s;
 }
-
-.container{
-    margin-top: 50px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+input[type="checkbox"]:checked {
+  border-color:#f4511e;
 }
-
-.itemAdd{
-    display: flex;
-    justify-content: center;
-    height: 2.5rem;
+input[type="checkbox"]:checked::after {
+  content:"✔";
+  color:#f4511e;
+  font-size:16px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
 }
-
-.input{
-    width: 80%;
-    border: none;
-    padding-right: 15px;
-    padding-left: 30px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 20px 20px 0px;
-}
-
-.buttonAdd{
-    background-color: #F4511E;
-    color: #ffff;
-    margin-right: -20px;
-    border: none;
-    width: 20%;
-    border-radius: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.input:focus{
-    outline: none;
-}
-
-.buttonAdd:hover{
-    background-color: #D84315;
-    cursor: pointer;
-}
-.buttonAdd:active{
-    background-color: #FF5722;
-}
+/* ------------------------- */
