@@ -35,3 +35,14 @@ taskListEl.addEventListener("change", (e) => {
   }
 });
 
+// remove task
+taskListEl.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("btnDelete") ||
+    e.target.classList.contains("delete") ||
+    e.target.closest(".btnDelete")
+  ) {
+    const li = e.target.closest("li");
+    li.remove();
+  }
+});
