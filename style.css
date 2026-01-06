@@ -16,6 +16,7 @@ body {
 .titleContainer {
   text-align: center;
   margin: 15px;
+  color: #57534D;
 }
 
 .topHead {
@@ -27,6 +28,7 @@ body {
 .titleHead {
   text-align: center;
   font-size: 1.2rem;
+  color: #314158;
 }
 p span {
   color: #f4511e;
@@ -34,6 +36,7 @@ p span {
 svg {
   width: 22px;
   height: 22px;
+  cursor: pointer;
 }
 
 .container {
@@ -81,11 +84,12 @@ svg {
 }
 
 .tasks {
-    padding: 25px;
+  padding: 25px;
   margin-top: 20px;
   border-radius: 10px;
   width: 100%;
   background-color: #ffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 ul {
@@ -93,28 +97,34 @@ ul {
   padding: 0;
 }
 
-ul li{
-  margin-bottom: 8px;
+.task {
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 .delete {
   color: #f4511e;
+  padding: 2px;
+}
+
+.btnDelete {
+  margin-left: 5px;
 }
 
 li {
-    background-color: #ECEFF1;
- padding: 5px 2px;
- display: flex;
- justify-content: space-between;
-border-radius: 20px;
+  background-color: #eceff1;
+  padding: 5px 2px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
 }
 
-.boxTask{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 10px;
-    padding: 0.5rem;
+.boxTask {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem;
 }
 
 button {
@@ -122,26 +132,49 @@ button {
 }
 /* checkbox */
 input[type="checkbox"] {
-  appearance:none;
-  width:22px;
-  height:22px;
-  border:2px solid #ccc;
-  border-radius:50%;
-  cursor:pointer;
-  position:relative;
-  background:#fff;
-  transition:border-color .3s;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  background: #fff;
+  transition: border-color 0.3s;
 }
 input[type="checkbox"]:checked {
-  border-color:#f4511e;
+  border-color: #f4511e;
 }
 input[type="checkbox"]:checked::after {
-  content:"✔";
-  color:#f4511e;
-  font-size:16px;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+  content: "✔";
+  color: #f4511e;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 /* ------------------------- */
+
+.loader {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #f4511e 94%, #0000) top/8px 8px
+      no-repeat,
+    conic-gradient(#0000 30%, #f4511e);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: l13 1s infinite linear;
+}
+@keyframes l13 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.done {
+  opacity: 0.4;
+  filter: grayscale(1);
+}
