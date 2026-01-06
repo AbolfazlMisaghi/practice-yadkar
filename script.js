@@ -29,9 +29,18 @@ function addToList() {
 buttonAddEl.addEventListener("click", addToList);
 inputEl.addEventListener("keypress", (e) => e.key === "Enter" && addToList());
 
+
 taskListEl.addEventListener("change", (e) => {
   if (e.target.classList.contains("checkbox")) {
-    e.target.closest("li").classList.toggle("done", e.target.checked);
+    const item = e.target.closest("li");
+
+    item.classList.toggle("done", e.target.checked);
+
+    if (e.target.checked) {
+      taskListEl.appendChild(item);
+    } else {
+      taskListEl.insertAdjacentElement("afterbegin", item);
+    }
   }
 });
 
@@ -46,3 +55,9 @@ taskListEl.addEventListener("click", (e) => {
     li.remove();
   }
 });
+
+// time
+setInterval(() => {
+  const now = luxon.DateTime.now().setLocale("fa");
+  document.querySelector(".time").textContent = now.toFormat("HH:mm:ss");
+}, 1000);
